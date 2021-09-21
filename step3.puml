@@ -1,0 +1,64 @@
+@startuml classdiagram
+!include commons.style
+
+package step3.api {
+
+    package dietetic{
+        interface DieteticElement{
+            calories100gr():double
+        }
+    }
+
+    package monetary{
+        interface Product{
+            price():double
+        }
+    }
+
+    package restauration{
+        interface Food{
+            weight():double
+            calories():double «default»
+        }
+
+        class Ingredient implements Food{
+            - weight:double
+            + this(base:Base,weight:double)
+            + calories100gr():double
+            + weight():double
+            + calories():double
+            + price():double
+        }
+
+        abstract Recipe implements Food{
+                - name : string
+                + this(name:string,indredients:List<Ingredient>)
+                +name():string
+                + ^calories100gr():double
+                + weight():double
+                + calories():double
+                + price():double
+        }
+
+        interface Base extends Product,DieteticElement{
+                hasUniquePrice():bool
+        }
+    }
+
+    package Burger{
+
+            enum BurgerBase implements Base{
+                BURGER, BARBECUE, BEARNAISE,
+                BEEF,WHITEFISH,
+                CHEDDAR, DEEPFRIEDONIONS, TOMATO
+                + calories100gr():double
+                + price() : double
+                + hasUniquePrice():bool
+            }
+
+            class Burger extends Recipe{
+                + this(name:string,indredients:List<Ingredient>)
+            }
+    }
+
+@enduml
