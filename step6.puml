@@ -1,7 +1,7 @@
 @startuml classdiagram
 !include commons.style
 
-package step4.api {
+package step6.api {
 
     package api{
 
