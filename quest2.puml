@@ -53,9 +53,8 @@ package original.api.general {
         - BASE_PRICE: double = 0.5
         + this(weight: double)
         + weight(): double
-        + price(): double
+        + price(): double 
     }
-
     class Sauce implements ProductAll {
         - weight: double
         - {static} BASE_PRICE: double = 1
