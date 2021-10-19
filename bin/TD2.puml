@@ -1,0 +1,15 @@
+@startuml classdiagram
+
+package composite{
+    public interface FileComponent{
+        getName(): String;
+        getContent() :String;
+        getOwner():Owner;
+        int getSize();
+        void appendContent(T a);
+        void  setOwner( in owner: Owner);
+    }
+
+}
+
+@enduml
