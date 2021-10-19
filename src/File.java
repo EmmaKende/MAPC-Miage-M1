@@ -1,4 +1,4 @@
-public class File extends FileImpl implements StringBuilder {
+public class File extends FileImpl {
 
     private StringBuilder content;
 
@@ -7,13 +7,8 @@ public class File extends FileImpl implements StringBuilder {
     }
 
     @Override
-    public String toString(){
-        return getContent();
-    }
-
-    @Override
     public String getContent() {
-        return getName();
+        return this.content.toString() + getName();
     }
 
     @Override
@@ -23,7 +18,7 @@ public class File extends FileImpl implements StringBuilder {
 
     @Override
     public void appendContent(String content) {
-        if(this.content == null) this.content.append(content);     
+           this.content.toString();  
     }
 
     @Override
@@ -36,10 +31,4 @@ public class File extends FileImpl implements StringBuilder {
         return false;
     }
 
-    @Override
-    public void append(String content) {
-        this.content.append(content);
-        
-    }
-    
 }

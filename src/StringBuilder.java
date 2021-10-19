@@ -1,4 +1,8 @@
-public interface StringBuilder {
-     String toString() ;
-     void append(String content);
+public class StringBuilder {
+     public String toString(){
+         return "";
+     }
+     public String append(String a){
+         return a;
+     }
 }

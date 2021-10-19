@@ -10,7 +10,11 @@ public class Repertoire extends FileImpl implements Composite{
 
     @Override
     public String getContent() {
-        return null;
+        StringBuilder s = new StringBuilder();
+        for(Composant comp :children){
+            s.append(comp.getName());
+        }
+        return s.toString();
     }
 
     @Override
@@ -24,7 +28,6 @@ public class Repertoire extends FileImpl implements Composite{
 
     @Override
     public void appendContent(String content) {
-        // TODO Auto-generated method stub
         
     }
 
@@ -37,7 +40,7 @@ public class Repertoire extends FileImpl implements Composite{
     @Override
     public boolean isComposite() {
        
-        return false;
+        return true;
     }
 
     @Override
@@ -63,5 +66,6 @@ public class Repertoire extends FileImpl implements Composite{
         // TODO Auto-generated method stub
         return false;
     }
+
     
 }
